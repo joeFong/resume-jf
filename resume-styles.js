@@ -406,8 +406,8 @@ h6 {
     widows: 2;
     text-align: left
 }
-#myBtn {
-    display: none; /* Hidden by default */
+#saveResume {
+    display: block; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     bottom: 30px; /* Place the button at the bottom of the page */
     right: 40px; /* Place the button 30px from the right */
@@ -419,9 +419,18 @@ h6 {
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    font-size: 15px; /* Increase font size */
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#myBtn:hover {
+#saveResume:hover {
     background-color: #555; /* Add a dark-grey background on hover */
-}`;
+}
+
+@media only screen and (max-width: 600px) {
+    .c18 {
+        max-width: 500.2pt;
+        padding: 54.8pt 43.2pt 62pt 48.5pt
+    }
+}
+`;

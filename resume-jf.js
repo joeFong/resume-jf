@@ -1,7 +1,10 @@
 // Import the LitElement base class and html helper function
-import { LitElement, css, html } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 import { resumeStyles } from './resume-styles.js';
 import { resumePlaceholder } from './resume-data.js';
+import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf'
+
 
 // Extend the LitElement base class
 class ResumeJF extends LitElement {
@@ -30,9 +33,28 @@ class ResumeJF extends LitElement {
     this.resume = resumePlaceholder;
   }
 
+  saveResume(e) {
+
+
+    const input = this.shadowRoot.getElementById('resumeContainer');
+    var cln = input.cloneNode(true);
+    document.body.appendChild(cln);
+    var resumeEl = document.getElementById('resumeContainer');
+    
+    html2canvas(resumeEl)
+      .then((canvas) => {
+        var imgData = canvas.toDataURL('image/jpeg', 1.0);
+        var doc = new jsPDF("p", "px", "a4");
+        doc.addImage(imgData, 'JPEG', 0, 0, resumeEl.width);
+        doc.save('resume.pdf');
+        resumeEl.remove();
+      })
+    ;
+  }
+
   classicTheme() {
     return html`
-    <div class="c14 c18">
+    <div id="resumeContainer" class="c14 c18">
       <p class="c31"><span class="c24 c16 c27">${this.resume.firstName}<span class="c24 c27 c16">&nbsp;${this.resume.lastName}</span></p>
       <p class="c1"><span class="c12 c34"><a class="c7" href="mailto:${this.resume.email}">${this.resume.email}</a></span><span class="c12">&nbsp;| </span><span class="c16 c12">${this.resume.phoneNumber}</span><span class="c6 c4">&nbsp;</span></p>
       <p class="c1">
@@ -86,6 +108,8 @@ class ResumeJF extends LitElement {
           <p class="c33 c35"><span class="c6 c11"></span></p>
       </div>
     </div>
+
+    <button @click="${this.saveResume}" id="saveResume" title="saveMyResume">Save Resume</button>
     `;
   }
 
