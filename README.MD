@@ -1,6 +1,6 @@
 # resume-jf
 
-A litHTMl webcomponent to easily create a new beautiful resume and embed it on your website or print it as a pdf.
+A litElement webcomponent to easily create a new beautiful resume and embed it on your website or print it as a pdf.
 
 ### Basic Usage
 Go to my website https://joefong.xyz to see what the 'resumeObj' object looks like.
