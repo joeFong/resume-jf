@@ -2,9 +2,6 @@
 import { LitElement, html } from 'lit-element';
 import { resumeStyles } from './resume-styles.js';
 import { resumePlaceholder } from './resume-data.js';
-import html2canvas from 'html2canvas';
-import * as jsPDF from 'jspdf'
-
 
 // Extend the LitElement base class
 class ResumeJF extends LitElement {
@@ -31,33 +28,6 @@ class ResumeJF extends LitElement {
     this.theme = 'classic';
 
     this.resume = resumePlaceholder;
-  }
-
-  saveResume(e) {
-
-
-    const input = this.shadowRoot.getElementById('resumeContainer');
-    var cln = input.cloneNode(true);
-    document.body.appendChild(cln);
-    var resumeEl = document.getElementById('resumeContainer');
-    
-    html2canvas(resumeEl)
-      .then((canvas) => {
-        var imgData = canvas.toDataURL('image/png', 1.0);
-        var doc = new jsPDF("l", "pt", "b1");
-        
-        var width = canvas.width;
-        var height = canvas.height;
-        var millimeters = {};
-        millimeters.width = Math.floor(width * 0.264583);
-        millimeters.height = Math.floor(height * 0.264583);
-        
-        doc.addImage(imgData, 'PNG', 0, 0, width, height);
-
-        doc.save('resume.pdf');
-        resumeEl.remove();
-      })
-    ;
   }
 
   classicTheme() {
@@ -99,7 +69,7 @@ class ResumeJF extends LitElement {
         </ul>
       `)}
       
-      <h1 class="c19"><span class="c24 c11 c16">KEY PROJECTS</span></h1>
+      <h1 id="page-break-1" class="c19"><span class="c24 c11 c16">KEY PROJECTS</span></h1>
       ${this.resume.keyProjects.map((val) => html`
         <p class="c10"><span class="c24 c4 c16">${val.role} (Client: ${val.projectName})</span></p>
         <ul class="c23 lst-kix_list_2-0">
@@ -116,8 +86,6 @@ class ResumeJF extends LitElement {
           <p class="c33 c35"><span class="c6 c11"></span></p>
       </div>
     </div>
-
-    <button @click="${this.saveResume}" id="saveResume" title="saveMyResume">Save Resume</button>
     `;
   }
 

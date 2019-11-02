@@ -1,10 +1,6 @@
 import { css } from 'lit-element';
 
-export const resumeStyles = css`
-  .site {
-    margin: 10%;
-  }
-    
+export const resumeStyles = css`    
   
   ol {
       margin: 0;
@@ -216,7 +212,7 @@ export const resumeStyles = css`
 
 .c18 {
     max-width: 500.2pt;
-    padding: 64.8pt 53.2pt 72pt 58.5pt
+    padding: 44.8pt 33.5pt 52pt 33.5pt
 }
 
 .c36 {
@@ -406,26 +402,12 @@ h6 {
     widows: 2;
     text-align: left
 }
-#saveResume {
-    display: block; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 30px; /* Place the button at the bottom of the page */
-    right: 40px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 15px; /* Increase font size */
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
 
-#saveResume:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
-}
+@media print {
+    #page-break-1 {
+        page-break-before: always;
+    }
+  }
 
 @media only screen and (max-width: 600px) {
     .c18 {

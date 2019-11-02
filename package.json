@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "webpack": "^4.41.2",
+    "lodash.merge": ">=4.6.2",
     "webpack-cli": "^3.3.9"
   }
 }
