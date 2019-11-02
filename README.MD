@@ -1,7 +1,5 @@
 # resume-jf
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 A litHTMl webcomponent to easily create a new beautiful resume and embed it on your website or print it as a pdf.
 
 ### Basic Usage
