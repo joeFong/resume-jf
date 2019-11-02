@@ -50,6 +50,7 @@ $ polymer serve
 
  - Write Tests
  - Add Themes
+ - A form to generate resume for users that don't want to deal with JSON 
 
 License
 ----
