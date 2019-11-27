@@ -1,23 +1,17 @@
 {
-  "name": "resume-jf",
-  "version": "1.0.5",
-  "description": "A litElement web component to easily deploy your resume on your personal website.",
-  "main": "dist/resume-jf.js",
+  "name": "resume-jf-form",
+  "version": "1.0.0",
+  "description": "An embeddable form to quickly deploy a resume-jf Web Component.",
+  "main": "dist/embed-id.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joeFong/resume-jf.git"
-  },
   "author": "Joe Fong",
   "license": "ISC",
   "dependencies": {
-    "html2canvas": "^1.0.0-rc.5",
-    "jspdf": "^1.5.3",
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
