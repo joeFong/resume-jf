@@ -16,6 +16,9 @@ class ResumeJFForm extends LitElement {
       :host {
         font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
       }
+      .card { 
+        height: 100vh;
+      }
       .step-margin {
         margin-bottom: 20px;
       }
