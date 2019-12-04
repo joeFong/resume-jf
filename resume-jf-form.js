@@ -69,6 +69,9 @@ class ResumeJFForm extends LitElement {
       },
       activeStep: {
         type: String
+      },
+      title: {
+        type: String
       }
     };
   }
@@ -81,6 +84,7 @@ class ResumeJFForm extends LitElement {
     this.keyProjects = [];
     this.education = [];
     this.activeStep = 'one';
+    this.title = '';
 
     this.response = {
       "firstName": "",
@@ -327,7 +331,7 @@ class ResumeJFForm extends LitElement {
     return html`
     <div class="card">
       <div class="card-content">
-        <h1 class="title">Resume JF Form</h1>
+        ${this.title && html`<h1 class="title">Resume JF Form</h1>`}
         <h3 class="subtitle">Fill in this form to quickly deploy your own online resume.</h3>
         
         <div class="step-margin">

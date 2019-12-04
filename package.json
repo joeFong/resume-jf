@@ -1,6 +1,6 @@
 {
   "name": "resume-jf-form",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An embeddable form to quickly deploy a resume-jf Web Component.",
   "main": "dist/embed-id.js",
   "directories": {
